@@ -1,19 +1,35 @@
 require "collins_client"
-module SendgridCollins
-  class Api
-    attr_reader :configuration, :connection
+
+# @todo this should really be decoupled from collins in case we ever switch infrastructure managers
+module KvmBoss
+  # handles all collins API calls
+  class CollinsApi
+
+    attr_reader :asset, :tools
+    # @param [Hash] args
+    # @param [String] host collins host
+    # @param [String] username collins username
+    # @param [String] password collins password
+    # @param [KvmBoss::Guest Object] guest
+    # @param [KvmBoss:Guest::Asset Object] asset 
+    # @param [KvmBoss::Infrastructure Object] intake 
+    # @param [KvmBoss::Infrastructure Object] provision 
     def initialize(args)
-      @configuration = args.fetch(:configuration)
+      @host      = args.fetch(:host) { "http://collins.sendgrid.net:8080" }
+      @username  = args.fetch(:username)
+      @password  = args.fetch(:password)
+      @guest     = args.fetch(:guest)
+      @asset     = @guest.asset
+      @tools     = args.fetch(:tools) { KvmBoss::Tools }
+      @intake    = args.fetch(:intake)
+      @provision = args.fetch(:provision)
     end
 
-    def asset_tag
-      @asset
+
+    def connect
+      @connection ||= Collins::Client.new(username: @username, password: @password, host: @host)
     end
 
-    def asset_tag=(tag)
-      convert_asset_tag(tag)
-    end
-    
     def find_asset(search_key, value)
       @connection.find(search_key => value)
     end
@@ -30,14 +46,14 @@ module SendgridCollins
       hostname
     end
 
-    def ipaddress_pools(showall=true)
+    def address_pools(showall=true)
       @connection.ipaddress_pools()
     end
 
     def addresses_for_asset(asset_tag=asset.tag)
       @connection.addresses_for_asset(asset_tag)
     end
-
+    
     # @param [String] asset tag
     # @param [Hash] opts
     def delete_asset(asset_tag=asset.tag, opts={})
@@ -46,13 +62,13 @@ module SendgridCollins
 
     # @param [String] asset tag
     # @param [String] attribute
-    def delete_asset_attribute(asset_tag=asset.tag, attribute)
+    def delete_attribute(asset_tag=asset.tag, attribute)
       @connection.delete_attribute!(asset_tag, attribute, group_id = nil)
     end
 
-    # @param [String asset tag
+    # @param [String] asset tag
     # @param [String] pool
-    def delete_asset_ipaddress(asset_tag=asset.tag, pool=nil)
+    def delete_ip_address(asset_tag=asset.tag, pool=nil)
       @connection.ipaddress_delete!(asset_tag, pool)  
     end
 
@@ -100,7 +116,7 @@ module SendgridCollins
     #   :reason (String) —
     # @example
     # collins-shell asset set_status --status=PROVISIONED --reason="kvm guest" --tag=52-54-00-f4-02-15
-    def set_asset_status(asset_tag=asset.tag, status_opts)
+    def set_status(asset_tag=asset.tag, status_opts)
       @connection.set_status!(asset_tag, status_opts) 
     end
 
@@ -111,7 +127,7 @@ module SendgridCollins
     # @example
     #  collins-shell asset set_attribute hostname sink-001.sjc1.sendgrid.net --tag=52-54-00-55-ad-a6
     #  collins-shell asset set_attribute kvm_host kvm-003.sjc1.sendgrid.net --tag=52-54-00-f0-ea-48
-    def set_asset_attribute(asset_tag=asset.tag, key, value)
+    def set_attribute(asset_tag=asset.tag, key, value)
       @connection.set_attribute!(asset_tag, key, value, group_id = nil)
     end
 
@@ -119,29 +135,17 @@ module SendgridCollins
     # @param  [String] profile guest profile
     # @param  [String] contact who is provisioning
     #def provision_guest(asset_tag=asset.tag, profile=@guest.profile, contact="libvirt", opts={})
-    #@connection.provision(asset_tag, profile, contact, opts)
+      #@connection.provision(asset_tag, profile, contact, opts)
     #end
 
     # runs #post on IntakeGuest
     def intake_guest
-      #@intake.post
+      @intake.post
     end
 
     # runs #post on ProvisonGuest
     def provision_guest
-      #@provision.post
-    end
-
-    private
-    def connect
-      @connection ||= Collins::Client.new(username: configuration.username,
-                                          password: configuration.password,
-                                          host: configuration.host)
-      self
-    end
-
-    def convert_asset_tag(tag)
-      tag.gsub(':', '-')
+      @provision.post
     end
   end
 end

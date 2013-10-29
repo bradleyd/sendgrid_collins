@@ -16,7 +16,6 @@ class SendgridCollinsTest < Minitest::Test
             option.password = 'collins'
             option.host     = 'http://collins.sendgrid.net:8080'
           end
-    p sgc
     assert sgc 
   end
 end

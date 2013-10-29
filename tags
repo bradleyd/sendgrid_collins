@@ -1,0 +1,69 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Api	lib/sendgrid_collins/api.rb	/^  class Api$/;"	c	class:SendgridCollins
+CollinsApi	lib/sendgrid_collins/api_old.rb	/^  class CollinsApi$/;"	c	class:KvmBoss
+Configuration	lib/sendgrid_collins/configuration.rb	/^  class Configuration$/;"	c	class:SendgridCollins
+KvmBoss	lib/sendgrid_collins/api_old.rb	/^module KvmBoss$/;"	m
+SendgridCollins	lib/sendgrid_collins.rb	/^module SendgridCollins$/;"	m
+SendgridCollins	lib/sendgrid_collins/api.rb	/^module SendgridCollins$/;"	m
+SendgridCollins	lib/sendgrid_collins/configuration.rb	/^module SendgridCollins$/;"	m
+SendgridCollins	lib/sendgrid_collins/version.rb	/^module SendgridCollins$/;"	m
+SendgridCollins	test/api_test.rb	/^class SendgridCollins::ApiTest < MiniTest::Test$/;"	c
+SendgridCollinsTest	test/sendgrid_collins_test.rb	/^class SendgridCollinsTest < Minitest::Test$/;"	c
+address_pools	lib/sendgrid_collins/api.rb	/^    def address_pools(showall=true)$/;"	f	class:SendgridCollins.Api
+address_pools	lib/sendgrid_collins/api_old.rb	/^    def address_pools(showall=true)$/;"	f	class:KvmBoss.CollinsApi
+addresses_for_asset	lib/sendgrid_collins/api.rb	/^    def addresses_for_asset(asset_tag=asset.tag)$/;"	f	class:SendgridCollins.Api
+addresses_for_asset	lib/sendgrid_collins/api_old.rb	/^    def addresses_for_asset(asset_tag=asset.tag)$/;"	f	class:KvmBoss.CollinsApi
+build_arguments	lib/sendgrid_collins/configuration.rb	/^    def build_arguments(args)$/;"	f	class:SendgridCollins.Configuration
+configure	lib/sendgrid_collins.rb	/^  def self.configure(&block)$/;"	F	class:SendgridCollins
+connect	lib/sendgrid_collins/api.rb	/^    def connect$/;"	f	class:SendgridCollins.Api
+connect	lib/sendgrid_collins/api_old.rb	/^    def connect$/;"	f	class:KvmBoss.CollinsApi
+create_asset	lib/sendgrid_collins/api.rb	/^    def create_asset(asset_tag=asset.tag, opts ={})$/;"	f	class:SendgridCollins.Api
+create_asset	lib/sendgrid_collins/api_old.rb	/^    def create_asset(asset_tag=asset.tag, opts ={})$/;"	f	class:KvmBoss.CollinsApi
+delete_asset	lib/sendgrid_collins/api.rb	/^    def delete_asset(asset_tag=asset.tag, opts={})$/;"	f	class:SendgridCollins.Api
+delete_asset	lib/sendgrid_collins/api_old.rb	/^    def delete_asset(asset_tag=asset.tag, opts={})$/;"	f	class:KvmBoss.CollinsApi
+delete_attribute	lib/sendgrid_collins/api.rb	/^    def delete_attribute(asset_tag=asset.tag, attribute)$/;"	f	class:SendgridCollins.Api
+delete_attribute	lib/sendgrid_collins/api_old.rb	/^    def delete_attribute(asset_tag=asset.tag, attribute)$/;"	f	class:KvmBoss.CollinsApi
+delete_ip_address	lib/sendgrid_collins/api.rb	/^    def delete_ip_address(asset_tag=asset.tag, pool=nil)$/;"	f	class:SendgridCollins.Api
+delete_ip_address	lib/sendgrid_collins/api_old.rb	/^    def delete_ip_address(asset_tag=asset.tag, pool=nil)$/;"	f	class:KvmBoss.CollinsApi
+find_asset	lib/sendgrid_collins/api.rb	/^    def find_asset(search_key, value)$/;"	f	class:SendgridCollins.Api
+find_asset	lib/sendgrid_collins/api_old.rb	/^    def find_asset(search_key, value)$/;"	f	class:KvmBoss.CollinsApi
+fuzzy_like_asset	lib/sendgrid_collins/api.rb	/^    def fuzzy_like_asset(search_key, value)$/;"	f	class:SendgridCollins.Api
+fuzzy_like_asset	lib/sendgrid_collins/api_old.rb	/^    def fuzzy_like_asset(search_key, value)$/;"	f	class:KvmBoss.CollinsApi
+get_asset	lib/sendgrid_collins/api.rb	/^    def get_asset(asset_tag=asset.tag, opts={})$/;"	f	class:SendgridCollins.Api
+get_asset	lib/sendgrid_collins/api_old.rb	/^    def get_asset(asset_tag=asset.tag, opts={})$/;"	f	class:KvmBoss.CollinsApi
+get_ipaddress	lib/sendgrid_collins/api.rb	/^    def get_ipaddress(asset_tag=asset.tag, pool)$/;"	f	class:SendgridCollins.Api
+get_ipaddress	lib/sendgrid_collins/api_old.rb	/^    def get_ipaddress(asset_tag=asset.tag, pool)$/;"	f	class:KvmBoss.CollinsApi
+get_next_hostname	lib/sendgrid_collins/api.rb	/^    def get_next_hostname(key="HOSTNAME", domain="sjc1.sendgrid.net", name)$/;"	f	class:SendgridCollins.Api
+get_next_hostname	lib/sendgrid_collins/api_old.rb	/^    def get_next_hostname(key="HOSTNAME", domain="sjc1.sendgrid.net", name)$/;"	f	class:KvmBoss.CollinsApi
+get_profiles	lib/sendgrid_collins/api.rb	/^    def get_profiles$/;"	f	class:SendgridCollins.Api
+get_profiles	lib/sendgrid_collins/api_old.rb	/^    def get_profiles$/;"	f	class:KvmBoss.CollinsApi
+initialize	lib/sendgrid_collins/api.rb	/^    def initialize(args)$/;"	f	class:SendgridCollins.Api
+initialize	lib/sendgrid_collins/api_old.rb	/^    def initialize(args)$/;"	f	class:KvmBoss.CollinsApi
+initialize	lib/sendgrid_collins/configuration.rb	/^    def initialize(args={}, &block)$/;"	f	class:SendgridCollins.Configuration
+intake_guest	lib/sendgrid_collins/api.rb	/^    def intake_guest$/;"	f	class:SendgridCollins.Api
+intake_guest	lib/sendgrid_collins/api_old.rb	/^    def intake_guest$/;"	f	class:KvmBoss.CollinsApi
+provision_guest	lib/sendgrid_collins/api.rb	/^    def provision_guest$/;"	f	class:SendgridCollins.Api
+provision_guest	lib/sendgrid_collins/api_old.rb	/^    def provision_guest$/;"	f	class:KvmBoss.CollinsApi
+set_attribute	lib/sendgrid_collins/api.rb	/^    def set_attribute(asset_tag=asset.tag, key, value)$/;"	f	class:SendgridCollins.Api
+set_attribute	lib/sendgrid_collins/api_old.rb	/^    def set_attribute(asset_tag=asset.tag, key, value)$/;"	f	class:KvmBoss.CollinsApi
+set_status	lib/sendgrid_collins/api.rb	/^    def set_status(asset_tag=asset.tag, status_opts)$/;"	f	class:SendgridCollins.Api
+set_status	lib/sendgrid_collins/api_old.rb	/^    def set_status(asset_tag=asset.tag, status_opts)$/;"	f	class:KvmBoss.CollinsApi
+setup	test/api_test.rb	/^  def setup$/;"	f	class:SendgridCollins
+setup	test/sendgrid_collins_test.rb	/^  def setup$/;"	f	class:SendgridCollinsTest
+test_im_api_responds_to_asset_tag	test/api_test.rb	/^  def test_im_api_responds_to_asset_tag$/;"	f	class:SendgridCollins
+test_im_api_responds_to_delete_host	test/api_test.rb	/^  def test_im_api_responds_to_delete_host$/;"	f	class:SendgridCollins
+test_im_api_responds_to_delete_host_attribute	test/api_test.rb	/^  def test_im_api_responds_to_delete_host_attribute$/;"	f	class:SendgridCollins
+test_im_api_responds_to_delete_host_ipaddress	test/api_test.rb	/^  def test_im_api_responds_to_delete_host_ipaddress$/;"	f	class:SendgridCollins
+test_im_api_responds_to_get_address_pools	test/api_test.rb	/^  def test_im_api_responds_to_get_address_pools$/;"	f	class:SendgridCollins
+test_im_api_responds_to_get_host	test/api_test.rb	/^  def test_im_api_responds_to_get_host$/;"	f	class:SendgridCollins
+test_im_api_responds_to_new	test/api_test.rb	/^  def test_im_api_responds_to_new$/;"	f	class:SendgridCollins
+test_im_api_responds_to_new_host	test/api_test.rb	/^  def test_im_api_responds_to_new_host$/;"	f	class:SendgridCollins
+test_im_api_responds_to_set_host_attribute	test/api_test.rb	/^  def test_im_api_responds_to_set_host_attribute$/;"	f	class:SendgridCollins
+test_im_api_responds_to_set_host_status	test/api_test.rb	/^  def test_im_api_responds_to_set_host_status$/;"	f	class:SendgridCollins
+test_pass_configure_a_block	test/sendgrid_collins_test.rb	/^  def test_pass_configure_a_block$/;"	f	class:SendgridCollinsTest
+test_responds_to_configure	test/sendgrid_collins_test.rb	/^  def test_responds_to_configure$/;"	f	class:SendgridCollinsTest

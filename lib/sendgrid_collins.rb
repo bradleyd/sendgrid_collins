@@ -5,6 +5,6 @@ require "sendgrid_collins/version"
 module SendgridCollins
   def self.configure(&block)
     config = Configuration.new(&block)
-    SendgridCollins::Api.new(config)
+    SendgridCollins::Api.new(configuration: config)
   end
 end
