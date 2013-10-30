@@ -14,9 +14,9 @@ class SendgridCollins::ApiTest < MiniTest::Test
     assert_respond_to(SendgridCollins::Api, :new)
   end
 
-  #def test_api_responds_to_asset
-    #assert_respond_to(@api, :asset)
-  #end
+  def test_api_responds_to_provision_asset
+    assert_respond_to(@api, :provision_asset)
+  end
 
   def test_api_responds_to_new_host
     assert_respond_to(@api, :create_asset)

@@ -1,6 +1,6 @@
 # SendgridCollins
 
-TODO: Write a gem description
+API for accessing sendgrid collins server
 
 ## Installation
 
@@ -18,7 +18,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+####Important steps to create an asset
+* create an asset
+```ruby
+asset_tag = '00-00-00-55-12-12'
+@collins.create_asset(asset_tag)
+# set some attributes
+@collins.set_asset_attributes(asset_tag, 'kvm_host', 'foobar.sjc1.sendgrid.net')
+# run intake <--- TBD
+# set asset to UNALLOCATED
+@collins.set_asset_status(asset_tag)
+# provision asset
+@collins.provision_asset(asset_tag)
+```
 
 ## Contributing
 
