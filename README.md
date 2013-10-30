@@ -18,10 +18,21 @@ Or install it yourself as:
 
 ## Usage
 
-####Important steps to create an asset
-* create an asset
+#### Create a connection to collins
 ```ruby
-asset_tag = '00-00-00-55-12-12'
+@collins  = SendgridCollins.configure do |config|
+              config.username = 'collins'
+              config.password = 'collins'
+              config.host     = 'http://collins.sendgrid.net:8080'
+            end
+```
+
+
+#### Create an asset
+* Intake is missing from this step
+
+```ruby
+@collins.asset_tag = '00:00:00:55:12:12'  # will convert mac address to asset tag
 @collins.create_asset(asset_tag)
 # set some attributes
 @collins.set_asset_attributes(asset_tag, 'kvm_host', 'foobar.sjc1.sendgrid.net')
